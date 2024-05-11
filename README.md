@@ -1,4 +1,4 @@
-# Hosting-a-Static-Website-with-CloudFront-and-AWS-S3
+# HOSTING A STATIC WEBSITE ON AWS S3 AND USING CLOUDFRONT FOR CDN
 
 ## Task
 Create a static website and host it on S3 bucket(private bucket) but with public read policy assigned, using cloud front for CDN
