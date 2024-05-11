@@ -16,11 +16,11 @@ i. After sign up and registration on AWS, Log into your AWS console and search f
 
 ii. Next, click on **create bucket**, go ahead to fill in a unique bucket name that has not been used, untick **Block all public access** and acknowledge the box below it.
 
-![S3](https://asset.cloudinary.com/dbzdpfq9c/f82a838b6b7723c42332fbf955081ef9) ![public access](https://asset.cloudinary.com/dbzdpfq9c/8cf8e465af6a72bc83d4eda0bb069a94)
+![S3](./screenshots/one.png) ![public access](./screenshots/two.png)
 
 iii. Leave all other settings unchecked and scroll down to click **create bucket**.
 
-![bucket success](https://asset.cloudinary.com/dbzdpfq9c/e0d19ac5a3f396e03abf12b5d1ea092c)
+![bucket success](/screenshots/three.png)
 
 ### Upload Website files to S3 Bucket
 
@@ -28,33 +28,33 @@ i. Click on the bucket name you created.
 
 ii. On the next screen, click on **upload** and select the files from your local computer. **NOTE:** Don't try to upload everything at once in a single folder. Instead, upload your files based on their type; if you have a folder containing images, a folder for css and an index.html file, upload the two folders first by clicking **upload folder** and selecting them, this will upload both files individually with their structures, then click **upload file** and select index.html.
 
-![upload](screenshots/four.png)
+![upload](./screenshots/four.png)
 
 iii. Click on **Add folders** or **Add file** and upload your folders and files.
 
-![upload folders](https://asset.cloudinary.com/dbzdpfq9c/9bfe99ecaacc43fd10ed1f80da1c0c95)
+![upload folders](./screenshots/four4.png)
 
 iv. After uploading the folders from your computer, click on **Upload**. Wait for the process to complete with a success banner at the top.
 
-![upload success](https://asset.cloudinary.com/dbzdpfq9c/941162848f312de0173a8bca1da0a55e)
+![upload success](./screenshots/five.png)
 
 ### Enable Static Website Hosting on S3 Bucket Created
 
 i. After uploading, inside the S3 bucket click on the **Properties** tab and scroll down to **Static website hosting**
 
-![Static website hosting](https://asset.cloudinary.com/dbzdpfq9c/98b49a37e3583af21c477629bc8c40f0)
+![Static website hosting](./screenshots/six.png)
 
 ii. Click **Edit** on **Static website hosting** and select **Enable**.
 
-![edit static](https://asset.cloudinary.com/dbzdpfq9c/57b4da299f3080daf6ec941738a94912)
+![edit static](./screenshots/seven.png)
 
 iii. Select **Host a static website** under **hosting type**. Under **Index document**, type "index.html" in it.
 
-![Static settings](https://asset.cloudinary.com/dbzdpfq9c/125607c2f15ac98c0fc4a06a882bdff8)
+![Static settings](./screenshots/eight.png)
 
 iv. Leave other settings as default and **save changes** at the bottom.
 
-![static success](https://asset.cloudinary.com/dbzdpfq9c/d3d07c0562c46c3f974a7d389172010d)
+![static success](./screenshots/nine.png)
 
 ### Attach a Bucket Policy
 
@@ -77,11 +77,62 @@ ii. Input the policy attached below. Scroll down and click on **save changes**. 
 }
 ```
 
-![policy](https://asset.cloudinary.com/dbzdpfq9c/a894080b65f67c3b7b18d1a13b5e4999)
-![policy success](https://asset.cloudinary.com/dbzdpfq9c/1a566f38105bfd1856d42b4d068b32ac)
+![policy](./screenshots/eleven.png)
+![policy success](./screenshots/twelve.png)
 
 
 iii. Click on the **Properties** tab and scroll down to **Static website hosting**, click on the link and your static website should upen in the next tab in your browser.
 
-![image](https://asset.cloudinary.com/dbzdpfq9c/ae830f2628d9c0cec9f012fd7c5726ee)
-![image](https://asset.cloudinary.com/dbzdpfq9c/ae830f2628d9c0cec9f012fd7c5726ee)
+![image](./screenshots/thirteen.png)
+![image](./screenshots/fourteen.png)
+
+
+### Create a CloudFront Distribution to make your AWS S3 bucket private
+
+i.Search for **Cloudfront** in your AWS console and click on it.
+
+ii. Click on **Create a CloudFront distribution**.
+
+![CloudFront distribution](./screenshots/fifteen.png)
+
+iii. Under **Origin domain**, select your S3 bucket. Do not click on **use website endpoint**.
+
+![Origin domain](./screenshots/sixteen.png)
+
+iii. Click on **Create new OAC**
+
+![Create OAC](./screenshots/seventeen.png)
+
+iv. Under **Web Application Firewall (WAF)**, click on **Do not enable security protections**.
+
+![WAF](./screenshots/eighteen.png)
+
+v Leave everything as default and click **create distribution**
+![create distribution](./screenshots/nineteen.png)
+
+vii. Next, click on **copy policy**
+
+![copy policy](./screenshots/twenty.png)
+
+viii. Go back to **permissions** under your S3 bucket and scroll to **bucket policy**, click **edit**. Clear the policy you inputted before. Paste the copied policy in there. Scroll down and click on **save changes**.
+
+![edit bucket policy](./screenshots/twenty1.png)
+
+ix. Go back to your cloudfront distribution, copy the **Distribution domain name**, paste it in your browser and add /index.html to it.
+
+![Distribution domain name](./screenshots/twenty15.png) ![Distribution domain name](./screenshots/twenty2.png)
+
+x. Working static website.
+
+![static web](./screenshots/twenty3.png)
+
+## Conclusion
+
+By following these steps, you've successfully created a static website hosted on a private S3 bucket with CloudFront acting as a Content Delivery Network (CDN). This configuration offers several advantages:
+
+- Security: Your website's origin (S3 bucket) remains private, protecting your files from unauthorized access.
+- Performance: CloudFront distributes your website content across a global network of edge locations, reducing latency and improving loading times for users worldwide.
+- Scalability: CloudFront automatically scales to handle traffic spikes, ensuring your website remains accessible even during high demand periods.
+- Cost-effectiveness: Since the S3 bucket is private, you only pay for storage and CloudFront charges for data transfer out.
+
+This approach is ideal for static websites like portfolios, brochures, or landing pages. Remember to replace the placeholder values (like bucket name) with your specific details.
