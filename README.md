@@ -10,7 +10,7 @@ ii. Webpage or website files for hosting (HTML, CSS, JS, etc)
 
 ## Steps 
 
-### Create a Bucket on Amazon S3
+### - Create a Bucket on Amazon S3
 
 i. After sign up and registration on AWS, Log into your AWS console and search for **S3** and click on it.
 
@@ -22,7 +22,7 @@ iii. Leave all other settings unchecked and scroll down to click **create bucket
 
 ![bucket success](/screenshots/three.png)
 
-### Upload Website files to S3 Bucket
+### - Upload Website files to S3 Bucket
 
 i. Click on the bucket name you created.
 
@@ -38,7 +38,7 @@ iv. After uploading the folders from your computer, click on **Upload**. Wait fo
 
 ![upload success](./screenshots/five.png)
 
-### Enable Static Website Hosting on S3 Bucket Created
+### - Enable Static Website Hosting on S3 Bucket
 
 i. After uploading, inside the S3 bucket click on the **Properties** tab and scroll down to **Static website hosting**
 
@@ -56,7 +56,7 @@ iv. Leave other settings as default and **save changes** at the bottom.
 
 ![static success](./screenshots/nine.png)
 
-### Attach a Bucket Policy
+### - Attach a Bucket Policy
 
 i. Click on **Permissions** tab, scroll down to **Bucket policy** and click on **Edit**
 
@@ -87,7 +87,7 @@ iii. Click on the **Properties** tab and scroll down to **Static website hosting
 ![image](./screenshots/fourteen.png)
 
 
-### Create a CloudFront Distribution to make your AWS S3 bucket private
+### - Create a CloudFront Distribution to make your AWS S3 bucket private
 
 i.Search for **Cloudfront** in your AWS console and click on it.
 
