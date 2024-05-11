@@ -28,7 +28,7 @@ i. Click on the bucket name you created.
 
 ii. On the next screen, click on **upload** and select the files from your local computer. **NOTE:** Don't try to upload everything at once in a single folder. Instead, upload your files based on their type; if you have a folder containing images, a folder for css and an index.html file, upload the two folders first by clicking **upload folder** and selecting them, this will upload both files individually with their structures, then click **upload file** and select index.html.
 
-![upload](https://asset.cloudinary.com/dbzdpfq9c/e0d19ac5a3f396e03abf12b5d1ea092c)
+![upload](https://res.cloudinary.com/dbzdpfq9c/image/upload/v1715415414/ALT/four_k6dwk8.png)
 
 iii. Click on **Add folders** or **Add file** and upload your folders and files.
 
